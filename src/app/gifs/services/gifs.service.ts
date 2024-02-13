@@ -21,9 +21,11 @@ export class GifsService {
     this._tagsHistory = this._tagsHistory.splice(0, 10);
   }
 
-  searchTag = (tag: string): void => {
+  async searchTag(tag: string):Promise<void> {
     if (tag.length === 0) return;
     this.organiceHistory(tag);
-
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=rrd78KIZbOMF9l54ckuUQ7Pz5U3P4Uki&q=valorant&limit=10')
+    .then(resp => resp.json())
+    .then(data => console.log(data))
   }
 }
