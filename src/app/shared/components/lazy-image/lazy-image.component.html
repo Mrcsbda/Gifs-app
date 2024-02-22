@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center">
   <img
     [src]="url"
-    class="card-img-top"
     [alt]="alt"
+    class="card-img-top animate__animated animate__fadeIn"
     (load)="onLoad()"
     [ngStyle]="{ display: hasLoaded ? '' : 'none' }"
   />
